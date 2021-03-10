@@ -1,0 +1,20 @@
+//block Testimonials
+section.c-testimonials#peoplesay
+    .container
+        i.c-testimonials__symbol “
+        ul.c-testimonials__list
+            each item, index in content.testimonials
+                - let i = index + 1
+                li.c-testimonials__recall(class=item.status === 'active' ? 'c-testimonials__recall--active' : undefined, data-id='people'+ i )
+                    p.c-testimonials__recall-text= item.comment
+                    span.c-testimonials__recall-author= item.author
+                    span.c-testimonials__recall-position= item.position
+        ul.c-testimonials__icons
+            each item, index in content.testimonials
+                - let i = index + 1
+                li.c-testimonials__avatar(class=item.status === 'active' ? 'c-testimonials__avatar--active' : '')
+                    a.c-testimonials__link(href='' id='people'+ i)
+                        picture
+                            source(type='image/webp' srcset='static/img/content/'+ item.avatar + '.webp 1x')
+                            img.c-testimonials__photo(src='static/img/content/'+ item.avatar + '.jpg', width='45', height='45', alt=''+ item.author)
+//end block Testimonials

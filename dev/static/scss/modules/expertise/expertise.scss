@@ -1,0 +1,159 @@
+.c-expertise {
+    padding-top: 68px;
+    padding-bottom: 68px;
+
+    &__title {
+        margin-bottom: 8px;
+        font-family: $second-font, Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: $ship_gray;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.050em;
+    }
+
+    &__text {
+        position: relative;
+        padding-bottom: 18px;
+        margin-bottom: 48px;
+        font-family: $second-font, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: $baltic_sea;
+        text-align: center;
+        letter-spacing: 0.075em;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            content: '';
+            width: 50px;
+            height: 2px;
+            background: $french_gray;
+        }
+    }
+
+    &__list {
+        /*display: grid;
+        grid-template-columns: repeat(auto-fill, 33.3%);*/
+    }
+
+    &__card {
+        padding: 0 29px 35px;
+        border-bottom: 1px solid $gallery;
+        box-sizing: border-box;
+
+        &:last-of-type {
+            border-bottom-color: transparent;
+        }
+
+        &-wrapper {
+            display: flex;
+            height: 115px;
+        }
+
+        &-icon {
+            display: block;
+            margin: auto;
+        }
+
+        &-title {
+            margin-bottom: 16px;
+            font-family: $second-font, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 900;
+            color: $ship_gray;
+            text-transform: uppercase;
+            letter-spacing: 0.050em;
+            text-align: center;
+        }
+
+        &-text {
+            /*max-width: 255px;
+            margin-left: auto;
+            margin-right: auto;*/
+            margin-bottom: 0;
+            font-family: $main-font, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 22px;
+            color: $mine_shaft;
+            letter-spacing: 0.050em;
+            text-align: center;
+        }
+    }
+
+    .container {
+
+    }
+}
+
+@media(min-width: $tablet) {
+    .c-expertise {
+
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 50%);
+        }
+
+        &__card {
+            border: 1px solid $gallery;
+
+            &:nth-of-type(2n+1) {
+                border-left-color: transparent;
+            }
+
+            &:nth-of-type(2n) {
+                border-right-color: transparent;
+            }
+
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+                border-top-color: transparent;
+            }
+
+            &:nth-last-of-type(1),
+            &:nth-last-of-type(2) {
+                border-bottom-color: transparent;
+            }
+        }
+    }
+}
+
+@media(min-width: $desctop) {
+    .c-expertise {
+
+        &__list {
+            grid-template-columns: repeat(auto-fill, 33.3%);
+        }
+
+        &__card {
+
+            &:nth-of-type(2n) {
+                border-right-color: $gallery;
+            }
+
+            &:nth-of-type(2n+1) {
+                border-left-color: $gallery;
+            }
+
+            &:nth-of-type(3n+1) {
+                border-left-color: transparent;
+            }
+
+            &:nth-of-type(3n) {
+                border-right-color: transparent;
+            }
+
+            &:nth-of-type(3) {
+                border-top-color: transparent;
+            }
+
+            &:nth-last-of-type(3) {
+                border-bottom-color: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+  "mainmenu": [
+    {
+      "title" : "Home",
+      "link" : "#home"
+    },
+    {
+      "title" : "About",
+      "link" : "#about"
+    },
+    {
+      "title" : "Expertise",
+      "link" : "#expertise"
+    },
+    {
+      "title" : "Teams",
+      "link" : "#teams"
+    },
+    {
+      "title" : "Works",
+      "link" : "#works"
+    },
+    {
+      "title" : "People say",
+      "link" : "#peoplesay"
+    },
+    {
+      "title" : "Contact",
+      "link" : "#contact"
+    }
+  ],
+  "footermenu": [
+    {
+      "title" : "Help",
+      "link" : ""
+    },
+    {
+      "title" : "Terms & condition",
+      "link" : ""
+    },
+    {
+      "title" : "Privacy",
+      "link" : ""
+    }
+  ]
+}

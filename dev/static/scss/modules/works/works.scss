@@ -1,0 +1,129 @@
+.c-works {
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+
+    &__title {
+        margin: 0 0 30px;
+        font-family: $second-font, Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: $ship_gray;
+        letter-spacing: 0.050em;
+        text-transform: uppercase;
+    }
+
+    &__all-projects {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-column-gap: 10px;
+        align-items: center;
+
+        &:hover {
+            .c-works__all-projects-text {
+                color: $robins_egg_blue;
+            }
+        }
+
+        &-text {
+            font-family: $main-font, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.050em;
+            color: $ship_gray;
+        }
+
+        &-arrow {
+            display: block;
+        }
+    }
+
+    &__projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(266px, 1fr));
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__card {
+        font-size: 0;
+
+        &:nth-child(12n+1),
+        &:nth-child(12n+5),
+        &:nth-child(12n+8),
+        &:nth-child(12n) {
+            background: $nobel;
+        }
+
+        &:nth-child(12n+6),
+        &:nth-child(12n+7) {
+            background: $silver_chalice;
+        }
+
+        &:nth-child(12n+3),
+        &:nth-child(12n+10) {
+            background: $silver_chalice1;
+        }
+
+        &:nth-child(12n+2),
+        &:nth-child(12n+11) {
+            background: $silver_chalice2;
+        }
+
+        &:nth-child(12n+4),
+        &:nth-child(12n+9) {
+            background: $gray;
+        }
+
+        &-link {
+            display: block;
+            height: 200px;
+        }
+
+        &-image {
+            max-width: 100%;
+            height: auto;
+            min-height: 100%;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        padding: 50px 0;
+    }
+
+    &__btn {
+        margin: auto;
+    }
+}
+
+@media(min-width: $tablet) {
+
+    .c-works {
+        &__header {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 70px;
+            padding-top: 60px;
+        }
+
+        &__title {
+            margin: 0;
+        }
+
+        &__footer {
+            padding: 70px 0;
+        }
+    }
+}
+
+@media(min-width: $desctop) {
+
+}

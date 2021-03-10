@@ -1,0 +1,53 @@
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="static/img/svg/symbol/sprite.svg#" + name)
+
+mixin picture(folder,nameimgmobile,format, nameimgdesc, alt,classimg,desktopwidth,tabletwidth,mobilewidth)
+	- alt = alt || ''
+	- classimg = classimg || ''
+	- folder = folder || ''
+	- nameimgdesc = nameimgdesc || nameimgmobile
+	picture
+		source(type="image/webp" media="(min-width: " + desktopwidth + "px)" srcset="static/img/" + folder + nameimgdesc + ".webp 1x, static/img/" + folder + nameimgdesc + "@2x.webp 2x")
+		source(type="image/webp" srcset="static/img/" + folder + nameimgmobile + ".webp 1x, static/img/" + folder + nameimgmobile + "@2x.webp 2x")
+		source(media="(min-width: " + desktopwidth + "px)" srcset="static/img/" + folder + nameimgdesc + "." + format + " 1x, static/img/" + folder + nameimgdesc + "@2x." + format + " 2x")
+		img(class=""+ classimg src="static/img/" + folder + nameimgmobile + "." + format srcset="static/img/" + folder + nameimgmobile + "@2x." + format + " 2x" alt=""+ alt)
+
+mixin picture3(folder,nameimgmobile,format, nameimgdesc, alt,classimg,desktopwidth,tabletwidth,mobilewidth)
+	- alt = alt || ''
+	- classimg = classimg || ''
+	- folder = folder || ''
+	- nameimgdesc = nameimgdesc || nameimgmobile
+	picture
+		source(type="image/webp" media="(min-width: " + desktopwidth + "px)" srcset="static/img/" + folder + nameimgdesc + ".webp 1x, static/img/" + folder + nameimgdesc + "@2x.webp 2x")
+		source(type="image/webp" media="(min-width: " + tabletwidth + "px)" srcset="static/img/" + folder + nameimgmobile + ".webp 1x, static/img/" + folder + nameimgmobile + "@2x.webp 2x")
+		source(type="image/webp" media="(min-width: " + mobilewidth + "px)" srcset="static/img/" + folder + nameimgmobile + ".webp 1x, static/img/" + folder + nameimgmobile + "@2x.webp 2x")
+		source(media="(min-width: " + desktopwidth + "px)" srcset="static/img/" + folder + nameimgdesc + "." + format + " 1x, static/img/" + folder + nameimgdesc + "@2x." + format + " 2x")
+		source(media="(min-width: " + tabletwidth + "px)" srcset="static/img/" + folder + nameimgmobile + "." + format + " 1x, static/img/" + folder + nameimgmobile + "@2x." + format + " 2x")
+		img(class=""+ classimg src="static/img/" + folder + nameimgmobile + "." + format srcset="static/img/" + folder + nameimgmobile + "@2x." + format + " 2x" alt=""+ alt)      
+
+mixin link(href,text,classlink)
+	a(href= href,class= classlink)= text
+
+mixin nav(link,title,icon,twopage,addlink)
+	if(title === activePage)
+		li.c-main-menu__item.c-main-menu__item--active
+			a(href= '/',class= 'c-main-menu__link')
+				span(class='zv-icon-menu-' +icon)
+				span= title
+			if(twopage === 'true')
+				if(page === addlink)
+					a(href="/", class="c-main-menu__add-new") Добавить
+				else
+					a(href="/" +addlink, class="c-main-menu__add-new") Добавить
+	else
+		li.c-main-menu__item
+			a(href= link,class=  'c-main-menu__link')
+				span(class='zv-icon-menu-' +icon)
+				span= title
+			if(twopage === 'true')
+				if(page === addlink)
+					a(href="/", class="c-main-menu__add-new") Добавить
+				else
+					a(href= addlink, class="c-main-menu__add-new") Добавить

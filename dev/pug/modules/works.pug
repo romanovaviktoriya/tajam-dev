@@ -1,0 +1,17 @@
+//block Our works
+section.c-works#works
+    .container
+        .c-works__header
+            h2.c-works__title Our works
+            a.c-works__all-projects(href='https://dribbble.com/')
+                span.c-works__all-projects-text See All Project in dribbble
+                i.c-works__all-projects-arrow.toright
+    ul.c-works__projects
+        each item, index in content.projects
+            li.c-works__card
+                a.c-works__card-link(href=''+ item.href title=''+ item.title)
+                    //img.c-works__card-image(src='static/img/content/'+ item.image, width='', height='', alt='') TODO: можно вставить фото
+    .container
+        .c-works__footer
+            a.c-works__btn.c-button(href='') Load more
+//end block Our works

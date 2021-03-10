@@ -1,0 +1,6 @@
+node_modules
+build
+.idea
+.gulp
+bash.exe.stackdump
+info

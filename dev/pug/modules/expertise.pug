@@ -1,0 +1,14 @@
+//block Expertise
+section.c-expertise#expertise
+    .container
+        h2.c-expertise__title Expertise
+        p.c-expertise__text Lorem ipsum dolor sit amet proin gravida nibh vel velit
+        ul.c-expertise__list
+            each item, index in content.expertise
+                - var i = index + 1
+                li.c-expertise__card
+                    .c-expertise__card-wrapper
+                        i.c-expertise__card-icon(class='expertise'+i)
+                    h4.c-expertise__card-title= item.title
+                    p.c-expertise__card-text= item.text
+//end block Expertise

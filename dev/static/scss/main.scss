@@ -1,0 +1,97 @@
+/* F O N T S */
+@import 'utils/fonts.scss';
+
+/* V A R S */
+@import 'utils/vars.scss';
+
+/* M I X I N */
+@import 'utils/mixins.scss';
+
+/* L I B R A R Y */
+@import 'libs.scss';
+
+/* G R I D */
+//@import 'utils/grid.scss';
+
+/* I C O N S */
+@import 'utils/icons.scss';
+
+/* B U T T O N S */
+@import 'utils/buttons.scss';
+
+/* M O D A L S */
+@import 'utils/modals.scss';
+
+/* F O R M S */
+@import 'utils/form.scss';
+
+
+html {
+	font-size: $baseFontSize;
+	line-height: 1.35;
+}
+
+
+body {
+	margin: 0;
+    width: 100%;
+    max-width: 100%;
+	font-family: $main-font, Arial, sans-serif;
+	font-size: 13px;
+	color: $black;
+	//background: $alabaster;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+	padding-right: 10px;
+    padding-left: 10px;
+}
+
+/* ------- common style ------- */
+ul {
+	@include list;
+}
+
+a {
+	@include link;
+
+	&[data-toggle="modal"] {
+
+	}
+
+	&:hover {
+
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+// modules
+@import "modules/modules.scss";
+
+// Index Page
+@import "pages/index/index.scss";
+
+//Sprite .png
+
+@import 'mixins/_sprite.scss';
+@include sprites($spritesheet-sprites);
+@include retina-sprites($retina-groups);
+
+@media (min-width: $tablet) {
+
+    .container {
+        width: 740px;
+    }
+}
+
+@media (min-width: $desctop) {
+
+    .container {
+        width: 960px;
+    }
+}

@@ -1,0 +1,13 @@
+//block Modal Video
+#videoModal.c-modal(tabindex='-1' role='dialog' aria-labelledby='' aria-hidden='true')
+    .c-modal__dialog(role='document')
+        .c-modal__content
+            .c-modal__header
+                h5#videoModalLabel.c-modal__title Our story
+                button.c-close(type='button' data-dismiss='modal' aria-label='Close')
+            .c-modal__body
+                .video-container
+                    iframe.video(width='560' height='315' src='https://www.youtube-nocookie.com/embed/KvUgaHTNit4?controls=0' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='allowfullscreen')
+            .c-modal__footer
+                button.c-button(type='button' data-dismiss='modal' aria-label='Close') Close
+//end block Modal Video

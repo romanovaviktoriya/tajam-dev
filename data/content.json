@@ -1,0 +1,181 @@
+{
+  "expertise" : [
+      {
+          "icon" : "expertise1",
+          "title" : "Web design & development",
+          "text" : "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean."
+      },
+      {
+          "icon" : "expertise2",
+          "title" : "Branding identity",
+          "text" : "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean."
+      },
+      {
+          "icon" : "expertise3",
+          "title" : "Mobile app",
+          "text" : "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean."
+      },
+      {
+          "icon" : "expertise4",
+          "title" : "Search engine optimization",
+          "text" : "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean."
+      },
+      {
+          "icon" : "expertise5",
+          "title" : "Game development",
+          "text" : "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean."
+      },
+      {
+          "icon" : "expertise6",
+          "title" : "Made with love",
+          "text" : "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean."
+      }
+  ],
+  "team" : [
+    {
+        "photo" : "",
+        "fullname" : "Semf Ucuk",
+        "position" : "Ceo & Founder"
+    },
+    {
+        "photo" : "",
+        "fullname" : "Dik Adalin",
+        "position" : "Engineering"
+    },
+    {
+        "photo" : "",
+        "fullname" : "Jeng Kol",
+        "position" : "Designer"
+    },
+    {
+        "photo" : "",
+        "fullname" : "Pet Romak",
+        "position" : "Marketing"
+    }
+  ],
+  "projects" : [
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project1"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project2"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project3"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project4"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project5"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project6"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project7"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project8"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project9"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project10"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project11"
+    },
+    {
+        "image" : "",
+        "href" : "",
+        "title" : "project12"
+    }
+  ],
+  "testimonials" : [
+    {
+      "author" : "Jane Galadriel",
+      "position" : "CEO tengkurep",
+      "comment" : "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
+      "avatar" : "people1",
+      "status": "none"
+    },
+    {
+      "author" : "Michel Rovan",
+      "position" : "developer",
+      "comment" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "avatar" : "people2",
+      "status": "none"
+    },
+    {
+      "author" : "Jak Noul",
+      "position" : "engineer",
+      "comment" : "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.",
+      "avatar" : "people3",
+      "status" : "active"
+    },
+    {
+      "author" : "Gabriel Stoul",
+      "position" : "copywriter",
+      "comment" : "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
+      "avatar" : "people4",
+      "status": "none"
+    },
+    {
+      "author" : "Mark Mitchel",
+      "position" : "CEO tengkurep",
+      "comment" : "This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.",
+      "avatar" : "people5",
+      "status": "none"
+    }
+  ],
+  "socials" : [
+    {
+      "class" : "fb",
+      "link" : ""
+    },
+    {
+      "class" : "tw",
+      "link" : ""
+    },
+    {
+      "class" : "bbb",
+      "link" : ""
+    },
+    {
+      "class" : "inst",
+      "link" : ""
+    },
+    {
+      "class" : "gplus",
+      "link" : ""
+    },
+    {
+      "class" : "yt",
+      "link" : ""
+    }
+  ]
+}

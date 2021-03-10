@@ -1,0 +1,28 @@
+// Иконки svg
+$pref: project-icon;
+
+.#{$pref}-base {
+	display: inline-block;
+	vertical-align: middle;
+	width: 24px;
+	height: 24px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/*.#{$pref}-play {
+	@extend .#{$pref}-base;
+	width: 37px;
+	height: 45px;
+    background-image: url('../img/general/truck.svg');
+	background-color: transparent;
+	background-size: contain;
+}*/
+
+$pref-sprite: icon;
+
+.#{$pref-sprite}-play {
+	width: 37px;
+	height: 45px;
+	fill: $white;
+}

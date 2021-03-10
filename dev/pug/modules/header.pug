@@ -1,0 +1,33 @@
+//block Header
+header.c-header#home
+	.container
+		//block Navbar
+		nav.c-navbar.navbar.navbar-expand-lg
+			a.c-logo.c-navbar__brand.navbar-brand(href='#')
+				img.c-logo__img(src='static/img/general/logo.png' width='44' height='50' alt='tajam')
+				span.c-logo__text tajam
+			button.c-navbar__toggler.navbar-toggler(type='button'
+									data-toggle='collapse'
+									data-target='#navbar'
+									aria-controls='navbar'
+									aria-expanded='false'
+									aria-label='Toggle navigation')
+				span.c-navbar__toggler-icon.navbar-toggler-icon
+			#navbar.c-navbar__collapse.collapse.navbar-collapse
+				ul.c-menu.c-navbar__nav.navbar-nav.ml-auto.mt-2.mt-lg-0
+					each item in nav.mainmenu
+						- var n = count + '_' + i++
+						if(page === item.link)
+							li.c-menu__item.c-navbar__nav-item.nav-item.active
+								a.c-menu__link.c-navbar__nav-link.nav-link(href='' + item.link)
+									= item.title
+									span.sr-only (current)
+						else
+							li.c-menu__item.c-navbar__nav-item.nav-item
+								a.c-menu__link.c-navbar__nav-link.nav-link(href='' + item.link)= item.title
+		//blok Slogan
+		section.c-header__slogan
+			h2.c-header__title We Are Awesome Creative Agency
+			p.c-header__text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+			a.c-button(href='') Learn more
+//end block Header

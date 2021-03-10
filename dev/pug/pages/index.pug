@@ -1,0 +1,25 @@
+extends ../layout/main-bootstrap
+
+block variables
+	- var title = "tajam"
+	- var pageClass = "index-page"
+	- var activePage = "Главная"
+	- var page = "index"
+	- var keywords = ""
+	- var ogtitle = ""
+	- var ogdescription = ""
+	- var ogsitename = ""
+	- var twdescription = ""
+	- var twtitle = ""
+	- var description = ""
+
+block content
+	main.c-content
+		include ../modules/story
+		include ../modules/expertise
+		include ../modules/team
+		include ../modules/works
+		include ../modules/testimonials
+		include ../modules/writetous
+block script
+	script

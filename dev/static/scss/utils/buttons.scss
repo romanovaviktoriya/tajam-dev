@@ -1,0 +1,31 @@
+.c-button {
+    display: inline-flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-height: 40px;
+    min-width: 120px;
+    font-family: $yet-font, Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $robins_egg_blue;
+    background: transparent;
+    border-radius: 4px;
+    border: 1px solid $robins_egg_blue;
+    outline: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+        color: $robins_egg_blue;
+        /*background: transparent;
+        border: 1px solid $white;
+        transition: all 0.5s ease;*/
+    }
+}
+
+@media (min-width: $tablet) {
+
+}

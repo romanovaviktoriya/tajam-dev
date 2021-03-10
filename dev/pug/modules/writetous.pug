@@ -1,0 +1,16 @@
+//block Write to us
+.c-writetous#contact
+    .container
+        h2.c-writetous__title Give us a good news
+        .c-writetous__wrapper
+            form.c-form#contactForm(action='ajax/fake' method='post')
+                .c-form__group
+                    input.c-form__field#name(type='text' name='name' value='' required placeholder='Name')
+                .c-form__group
+                    input.c-form__field#email(type='email' name='email' value='' required placeholder='E-mail' title='your@email.com')
+                .c-form__group
+                    input.c-form__field#subject(type='text' name='subject' value='' required placeholder='Subject')
+                .c-form__group
+                    textarea.c-form__field#message(name='message', cols='30', rows='10' placeholder='Your message')
+                button.c-writetous__btn.c-button#submit(type='submit') Submit
+//end block Write to us

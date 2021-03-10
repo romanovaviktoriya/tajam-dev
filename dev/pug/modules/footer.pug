@@ -1,0 +1,35 @@
+//block Footer
+footer.c-footer
+    .container
+        .c-footer__wrapper
+            section.c-footer__left
+                a.c-footer__logo.c-logo(href='#')
+                    img.c-logo__img(src='static/img/general/logo.png' width='44' height='50' alt='tajam')
+                    span.c-logo__text tajam
+                p.c-footer__slogan lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit
+            section.c-footer__center
+                h4.c-footer__subtitle Our studio
+                .c-footer__address
+                    i.c-footer__address-icon.location
+                    address.c-footer__address-text Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat 11480 - Indonesia
+                a.c-footer__phone(href='tel:+622122243333')
+                    i.c-footer__phone-icon.phone
+                    span.c-footer__phone-text (+62) 21-2224 3333
+            section.c-footer__right
+                h4.c-footer__subtitle Stay in touch
+                form.c-footer__subscribe#subscribeForm(method='post' action='ajax/fake')
+                    input.c-form__field#subscribe(type='email' name='mail' placeholder='Subscribe our newsletter' required)
+                    button.c-button(type='submit')
+                        i.send
+                ul.c-footer__social.c-social-icons
+                    each item, index in content.socials
+                        - var i = index + 1
+                        li.c-social-icons__item
+                            a.c-social-icons__link(href=''+ item.link)
+                                i.c-social-icons__img(class=''+ item.class)
+            ul.c-footer__menu.c-menu
+                each item in nav.footermenu
+                    li.c-menu__item
+                        a.c-menu__link(href='' + item.link)= item.title
+            p.c-footer__copyright Copyright &copy;&nbsp;2015&nbsp;&mdash; Tajem Creative
+//end block Footer

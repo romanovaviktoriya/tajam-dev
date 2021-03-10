@@ -1,0 +1,17 @@
+//block Team
+section.c-team#teams
+    .container
+        h2.c-team__title Meet our amazing team
+        p.c-team__subtitle Lorem ipsum dolor sit amet proin gravida nibh vel velit
+        ul.c-team__list
+            each item, index in content.team
+                - var i = index + 1
+                li.c-team__card
+                    .c-team__card-wrapper
+                        //img.c-team__card-photo(src='static/img/content/'+item.photo, width='' height='' alt=''+ item.fullname) TODO: можно вставить фото
+                    .c-team__card-text
+                        h4.c-team__card-name= item.fullname
+                        span.c-team__card-position= item.position
+        p.c-team__text Become part of our dream team, let’s join us !
+        a.c-team__btn.c-button(href='') We are hiring
+//end block Team

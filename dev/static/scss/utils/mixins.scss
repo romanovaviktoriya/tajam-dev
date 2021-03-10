@@ -1,0 +1,228 @@
+@mixin list {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+@mixin link {
+	color: inherit;
+
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '', $box: border-box){
+	content: $content;
+	display: $display;
+	position: $pos;
+	box-sizing: $box;
+}
+
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+	@include pseudo($pos: $position);
+	width: 0;
+	height: 0;
+	@if $round {
+		border-radius: 3px;
+	}
+	@if $direction == down {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+		margin-top: 0 - round( $size / 2.5 );
+	} @else if $direction == up {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+		margin-bottom: 0 - round( $size / 2.5 );
+	} @else if $direction == right {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+		margin-right: -$size;
+	} @else if $direction == left {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+		margin-left: -$size;
+	}
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder           { @content; }
+	&::-moz-placeholder          { @content; }
+	&:-ms-input-placeholder      { @content; }
+}
+
+@mixin btn-outline {
+	display: flex;
+	padding: .375rem .75rem;
+	min-height: 40px;
+	background-color: transparent;
+	background-image: none;
+	font-size: 1rem;
+	line-height: 1.5;
+	font-weight: 400;
+	//color: $mountain-meadow;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	border: 1px solid $mountain-meadow;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+	&:hover {
+		color: $white;
+		//background-color: $mountain-meadow;
+		//border-color: $mountain-meadow;
+	}
+}
+
+// mixin для наклонный краев блока
+@mixin angle($pseudo, $flip: false, $angle: 1.5deg) {
+	// Possible values for $pseudo are: before, after, both
+	@if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
+	  position: relative;
+	  z-index: 1;
+	  $selector: if($pseudo == 'both', '&:before,&:after', '&:#{$pseudo}');
+  
+	  #{$selector} {
+		background: inherit;
+		content: '';
+		display: block;
+		height: 50%;
+		left: 0;
+		position: absolute;
+		right: 0;
+		z-index: -1;
+		-webkit-backface-visibility: hidden; // for Chrome Windows
+	  }
+  
+	  @if $pseudo == 'before' {
+		#{$selector} {
+		  top: 0;
+  
+		  @if $flip {
+			transform: skewY($angle * -1);
+			transform-origin: 0 0;
+		  } @else {
+			transform: skewY($angle);
+			transform-origin: 100% 0;
+		  }
+		}
+	  }
+  
+	  @if $pseudo == 'after' {
+		#{$selector} {
+		  bottom: 0;
+  
+		  @if $flip {
+			transform: skewY($angle);
+			transform-origin: 0 100%;
+		  } @else {
+			transform: skewY($angle * -1);
+			transform-origin: 100%;
+		  }
+		}
+	  }
+  
+	  @if $pseudo == 'both' {
+		&:before {
+		  top: 0;
+  
+		  @if $flip {
+			transform: skewY($angle * -1);
+			transform-origin: 0 0;
+		  } @else {
+			transform: skewY($angle);
+			transform-origin: 100% 0;
+		  }
+		}
+  
+		&:after {
+		  bottom: 0;
+  
+		  @if $flip {
+			transform: skewY($angle);
+			transform-origin: 0 0;
+		  } @else {
+			transform: skewY($angle * -1);
+			transform-origin: 100%;
+		  }
+		}
+	  }
+	}
+  }
+  
+
+@mixin multilevel-ol-list {
+    list-style: none; 
+    counter-reset: li;  /* Идентифицируем счетчик и даем ему имя li. Значение счетчика не указано - по умолчанию оно равно 0 */
+            
+    li {
+
+        &::before {
+            counter-increment: li; /* элемент, который будет нумероваться — li. Псевдоэлемент before указывает, что содержимое, вставляемое при помощи свойства content, будет располагаться перед пунктами списка. Здесь же устанавливается значение приращения счетчика (по умолчанию равно 1). */
+             content: counters(li,".") ". "; /* С помощью свойства content выводится номер пункта списка. counters() означает, что генерируемый текст представляет собой значения всех счетчиков с таким именем. Точка в кавычках добавляет разделяющую точку между цифрами, а точка с пробелом добавляется перед содержимым каждого пункта списка */
+        }
+    }
+}
+
+@mixin inner-table {
+    .c-table {
+
+        &__tbody {
+            tr {
+                &:nth-of-type(2n+1),
+                &:nth-of-type(2n) {
+                    background: transparent;
+                }
+
+                &:nth-last-of-type(2) {
+                    align-items: flex-start;
+
+                    td {
+                        vertical-align: top;
+                    }
+
+                    a {
+                        margin-bottom: 10px;
+
+                        &:last-of-type {
+                            //margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            th.c-table__cell {
+                &:first-of-type {
+                    width: 60%;
+                }
+            }
+
+            td.c-table__cell {
+                padding-left: 0;
+            }
+        }
+
+        &__cell {
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            &:last-of-type {
+                width: auto;
+            }
+        }
+    }
+}
