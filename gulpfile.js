@@ -21,16 +21,14 @@ $.path.task.forEach(function(taskPath) {
 
 $.gulp.task('dev', $.gulp.series(
     'clean',
-    $.gulp.parallel('favicon', 'styles:dev', 'pug', 'js:copy', 'libs:dev', 'svg', 'img:dev', 'webp', 'fonts','svg:copy', 'sprite')/*,
-    'generate-favicon',
-    'inject-favicon-markups'*/
+    $.gulp.parallel('favicon', 'styles:dev', 'pug', 'js:copy', 'libs:dev', 'svg', 'img:dev', 'webp', 'fonts','svg:copy', 'sprite')
     ));
 
 $.gulp.task('build', $.gulp.series(
     'clean',
-    $.gulp.parallel('favicon', 'styles:build', 'pug', 'js:copy', 'libs:build', 'svg', 'img:build', 'webp', 'fonts','svg:copy', 'sprite')/*,
+    $.gulp.parallel('styles:build', 'pug', 'js:copy', 'libs:build', 'svg', 'img:build', 'webp', 'fonts','svg:copy', 'sprite'),
     'generate-favicon',
-    'inject-favicon-markups'*/
+    'inject-favicon-markups'
     ));
 
 $.gulp.task('default', $.gulp.series(

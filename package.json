@@ -30,7 +30,8 @@
     "gulp-svgmin": "^1.2.4",
     "gulp-tinypng": "^1.0.2",
     "gulp-uglifyjs": "^0.6.2",
-    "gulp-webp": "^3.0.0"
+    "gulp-webp": "^3.0.0",
+    "gulp.spritesmith": "^6.11.0"
   },
   "dependencies": {
     "generator-gulp-bootstrap3": "^0.4.4",
