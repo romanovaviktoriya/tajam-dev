@@ -1,7 +1,10 @@
 .c-header {
     position: relative;
-    background: url('../img/content/header_bg.jpg') no-repeat center / cover;
+    max-width: 1600px;
     min-height: 670px;//TODO
+    margin-left: auto;
+    margin-right: auto;
+    background: url('../img/content/header_bg.jpg') no-repeat center / cover;
 
     &::before {
         content: '';
@@ -25,12 +28,13 @@
     &__title {
         position: relative;
         padding: 0 0 22px;
-        margin: 0 0 30px;
+        margin: 0 0 23px;
         font-family: $second-font, Arial, sans-serif;
         font-size: 32px;
         font-weight: 900;
         //line-height: 10px;
         color: $white;
+        letter-spacing: 0.010em;
 
         &::after {
             position: absolute;
@@ -38,24 +42,25 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 50px;
             height: 1px;
             background: $robins_egg_blue;
         }
     }
 
     &__text {
-        margin-bottom: 50px;
+        margin-bottom: 47px;
         font-family: $main-font, Arial, sans-serif;
         font-size: 14px;
         font-weight: 300;
         line-height: 24px;
         color: $white;
+        letter-spacing: 0.050em;
     }
 
     .navbar {
         padding: 15px 0;
-        margin-bottom: 15vh;
+        margin-bottom: 14vh;
 
         &-toggler {
             color: rgba(255,255,255,.5);

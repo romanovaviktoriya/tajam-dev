@@ -1,7 +1,10 @@
 .c-story {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
 
     &__top {
-        padding-top: 70px;
+        padding-top: 64px;
         padding-bottom: 70px;
 
         .c-button {
@@ -23,15 +26,18 @@
     &__logo {
         grid-area: img;
         justify-self: center;
+        padding-top: 6px;
     }
 
     &__title {
         grid-area: title;
+        margin-top: 0;
         margin-bottom: 0;
         font-family: $second-font, Arial, sans-serif;
         font-size: 22px;
         font-weight: 700;
         color: $ship_gray;
+        letter-spacing: 0.050em;
         text-transform: uppercase;
     }
 
@@ -43,8 +49,10 @@
         font-weight: 300;
         line-height: 22px;
         color: $ship_gray;
+        letter-spacing: 0.030em;
 
         p {
+            margin-top: 0;
             margin-bottom: 22px;
 
             &:last-child {
@@ -77,8 +85,8 @@
 
 .c-play {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left: 49.89%;
+    top: 50.7%;
     transform: translateX(-50%) translateY(-50%);
     display: inline-grid;
     grid-template-columns: 1fr;
@@ -108,6 +116,7 @@
         font-size: 16px;
         font-weight: 900;
         color: $white;
+        letter-spacing: 0.050em;
         text-transform: uppercase;
     }
 }
@@ -121,7 +130,7 @@
                                         'img text'
                                         'img btn';
                 grid-template-columns: 1fr 1fr;
-                grid-column-gap: 20px;
+                grid-column-gap: 32px;
                 grid-row-gap: 18px;
                 justify-items: start;
             }
@@ -134,7 +143,7 @@
 
         &__top {
             .container {
-                grid-template-columns: 380px 1fr;
+                grid-template-columns: 368px 1fr;
             }
         }
     }

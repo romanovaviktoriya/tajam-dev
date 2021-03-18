@@ -1,7 +1,10 @@
 .c-footer {
     position: relative;
-    padding-top: 70px;
+    padding-top: 69px;
+    max-width: 1600px;
     min-height: 400px;//TODO
+    margin-left: auto;
+    margin-right: auto;
     background: url('../img/content/footer_bg.jpg') no-repeat center / cover;
 
     &::before {
@@ -26,7 +29,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-column-gap: 20px;
-        grid-row-gap: 60px;
+        grid-row-gap: 50px;
     }
 
     &__left {
@@ -34,7 +37,7 @@
     }
 
     &__logo {
-        margin-bottom: 22px;
+        margin-bottom: 21px;
     }
 
     &__slogan {
@@ -52,8 +55,9 @@
     }
 
     &__subtitle {
-        margin-bottom: 30px;
-        padding-top: 10px;
+        margin-top: 0;
+        margin-bottom: 27px;
+        padding-top: 14px;
         font-family: $main-font, Arial, sans-serif;
         font-size: 15px;
         line-height: 26px;
@@ -64,6 +68,7 @@
     }
 
     &__address {
+        margin-bottom: 12px;
         display: grid;
         grid-template-areas: 'icon text';
         justify-content: flex-start;
@@ -93,7 +98,7 @@
         grid-template-areas: 'icon text';
         justify-content: flex-start;
         align-items: flex-start;
-        grid-column-gap: 15px;
+        grid-column-gap: 12px;
 
         &:hover {
 
@@ -121,6 +126,12 @@
 
     &__right {
         grid-area: right;
+
+        .c-footer {
+            &__subtitle {
+                margin-bottom: 31px;
+            }
+        }
     }
 
     &__subscribe {
@@ -179,6 +190,8 @@
 
             &__link {
                 display: block;
+                font-size: 14px;
+                letter-spacing: 0.025em;
                 padding-right: 0.8rem;
                 padding-left: 0.8rem;
             }
@@ -239,7 +252,7 @@
                 'menu menu copyright';
             grid-template-columns: repeat(3, 1fr);
             grid-column-gap: 20px;
-            grid-row-gap: 60px;
+            grid-row-gap: 50px;
         }
 
         &__menu {
@@ -254,6 +267,10 @@
 
 @media (min-width:  $desctop) {
     .c-footer {
+
+        &__right {
+            padding-left: 9px;
+        }
 
         &__copyright {
             justify-self: flex-end;

@@ -1,6 +1,9 @@
 .c-testimonials {
     position: relative;
+    max-width: 1600px;
     min-height: 500px;//TODO
+    margin-left: auto;
+    margin-right: auto;
     background: url('../img/content/testimonials_bg.jpg') no-repeat center / cover;
 
     &::before {
@@ -16,10 +19,11 @@
 
     &__symbol {
         display: block;
-        margin-bottom: 24px;
+        margin-bottom: 21px;
         font-family: $second-font, Arial, sans-serif;
         font-size: 100px;
         font-weight: 400;
+        font-style: normal;
         line-height: 22px;
         letter-spacing: 0.030em;
         color: $white;
@@ -27,6 +31,9 @@
 
     &__list {
         margin-bottom: 38px;
+        max-width: 780px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__recall {
@@ -37,6 +44,7 @@
         }
 
         &-text {
+            margin-top: 0;
             margin-bottom: 42px;
             font-family: $second-font, Arial, sans-serif;
             font-size: 16px;
