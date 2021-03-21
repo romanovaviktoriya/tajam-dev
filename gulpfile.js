@@ -12,7 +12,9 @@ global.$ = {
     webp: require('gulp-webp'),
     realFavicon: require ('gulp-real-favicon'),
     spritesmith: require('gulp.spritesmith'),
-    merge: require('merge-stream')
+    merge: require('merge-stream'),
+    postcss: require('gulp-postcss'),
+    autoprefixer: require('autoprefixer')
 };
 
 $.path.task.forEach(function(taskPath) {

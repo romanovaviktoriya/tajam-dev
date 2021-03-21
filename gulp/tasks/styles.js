@@ -7,7 +7,8 @@ module.exports = function () {
             // }))
             .pipe($.scss())
             .pipe($.gp.autoprefixer({
-                browsers: ['last 15 versions', '>1%', 'ie 8', 'ie 7']
+                browsers: ['last 15 versions', '>1%', 'ie 10', 'ie 11'],
+                grid: 'autoplace'
             }))
             .pipe($.gp.csscomb())
             .pipe($.gp.csso())
@@ -31,9 +32,11 @@ module.exports = function () {
                 };
             }))
             .pipe($.gp.sourcemaps.write())
-            .pipe($.gp.autoprefixer({
-                browsers: ['last 15 versions', '>1%', 'ie 8', 'ie 7']
-            }))
+            /*.pipe($.autoprefixer({
+                //browsers: ['last 4 versions', '>1%', 'ie 10', 'ie 11'],
+                grid: 'autoplace'
+            }))*/
+            .pipe($.postcss([ $.autoprefixer() ]))
             .pipe($.rename('main.min.css'))
             .pipe($.gulp.dest('./build/static/css/'))
             .pipe($.browserSync.reload({
