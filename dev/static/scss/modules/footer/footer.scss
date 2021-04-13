@@ -70,19 +70,22 @@
     &__address {
         margin-bottom: 12px;
         display: grid;
-        grid-template-areas: 'icon text';
-        justify-content: flex-start;
-        align-items: flex-start;
+        grid-template-areas: 'iconaddress textaddress';
+        grid-template-columns: min-content 1fr;
         grid-column-gap: 15px;
+
+        & > * {
+            align-self: flex-start;
+        }
 
         &-icon {
             display: block;
             margin-top: 5px;
-            grid-area: icon;
+            grid-area: iconaddress;
         }
 
         &-text {
-            grid-area: text;
+            grid-area: textaddress;
             font-family: $main-font, Arial, sans-serif;
             font-size: 14px;
             line-height: 26px;
@@ -95,10 +98,14 @@
 
     &__phone {
         display: grid;
-        grid-template-areas: 'icon text';
-        justify-content: flex-start;
-        align-items: flex-start;
+        grid-template-areas: 'iconphone textphone';
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: 1fr;
         grid-column-gap: 12px;
+
+        & > * {
+            align-self: flex-start;
+        }
 
         &:hover {
 
@@ -110,11 +117,15 @@
         &-icon {
             display: block;
             margin-top: 5px;
-            grid-area: icon;
+            grid-area: iconphone;
+            -ms-grid-column: 1;
+            -ms-grid-row: 1;
         }
 
         &-text {
-            grid-area: text;
+            grid-area: textphone;
+            -ms-grid-column: 3;
+            -ms-grid-row: 1;
             font-family: $main-font, Arial, sans-serif;
             font-size: 14px;
             line-height: 26px;
@@ -137,10 +148,12 @@
     &__subscribe {
         display: grid;
         grid-template-areas: 'field btn';
+        grid-template-columns: max-content min-content;
         grid-column-gap: 10px;
         margin-bottom: 27px;
 
         .c-form__field {
+            grid-area: field;
             padding: 11px 20px;
             color: rgba(255,255,255, 0.5);
             border-color: rgba(255,255,255, 0.5);
@@ -151,6 +164,7 @@
         }
 
         .c-button {
+            grid-area: btn;
             min-width: 70px;
             width: 70px;
             height: 45px;
@@ -216,12 +230,36 @@
 
 .c-social-icons {
     display: grid;
+    grid-template-areas: 'soc1 soc2 soc3 soc4 soc5 soc6';
     grid-template-columns: repeat(6, 35px);
     grid-template-rows: 1fr;
     grid-column-gap: 8px;
 
     &__item {
 
+        &:nth-child(1) {
+            grid-area: soc1;
+        }
+
+        &:nth-child(2) {
+            grid-area: soc2;
+        }
+
+        &:nth-child(3) {
+            grid-area: soc3;
+        }
+
+        &:nth-child(4) {
+            grid-area: soc4;
+        }
+
+        &:nth-child(5) {
+            grid-area: soc5;
+        }
+
+        &:nth-child(6) {
+            grid-area: soc6;
+        }
     }
 
     &__link {

@@ -1,3 +1,56 @@
+// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+if (!Object.keys) {
+    Object.keys = (function() {
+      'use strict';
+      var hasOwnProperty = Object.prototype.hasOwnProperty,
+          hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
+          dontEnums = [
+            'toString',
+            'toLocaleString',
+            'valueOf',
+            'hasOwnProperty',
+            'isPrototypeOf',
+            'propertyIsEnumerable',
+            'constructor'
+          ],
+          dontEnumsLength = dontEnums.length;
+  
+      return function(obj) {
+        if (typeof obj !== 'function' && (typeof obj !== 'object' || obj === null)) {
+          throw new TypeError('Object.keys called on non-object');
+        }
+  
+        var result = [], prop, i;
+  
+        for (prop in obj) {
+          if (hasOwnProperty.call(obj, prop)) {
+            result.push(prop);
+          }
+        }
+  
+        if (hasDontEnumBug) {
+          for (i = 0; i < dontEnumsLength; i++) {
+            if (hasOwnProperty.call(obj, dontEnums[i])) {
+              result.push(dontEnums[i]);
+            }
+          }
+        }
+        return result;
+      };
+    }());
+  }
+
+//** Polyfill Для браузеров не поддерживающих Element.closest(), но позволяющих использовать element.matches() */
+  (function(ELEMENT) {
+    ELEMENT.matches = ELEMENT.matches || ELEMENT.mozMatchesSelector || ELEMENT.msMatchesSelector || ELEMENT.oMatchesSelector || ELEMENT.webkitMatchesSelector;
+    ELEMENT.closest = ELEMENT.closest || function closest(selector) {
+        if (!this) return null;
+        if (this.matches(selector)) return this;
+        if (!this.parentElement) {return null}
+        else return this.parentElement.closest(selector)
+      };
+}(Element.prototype));
+
 //** YouTube Player */
 let player;
 function onYouTubeIframeAPIReady() {
@@ -10,7 +63,9 @@ function onYouTubeIframeAPIReady() {
             'autoplay': 0,
             //'controls': 0,
             'showinfo': 0,
-            'rel': 0
+            'rel': 0,
+            'wmode': 'opaque',
+            'origin': 'http://localhost:3000'
         },
         events: {
             //'onReady': onPlayerReady,
@@ -45,6 +100,10 @@ function stopVideo() {
 }
 
 document.addEventListener('DOMContentLoaded', function(){ // Аналог $(document).ready(function(){
+
+    //** SVG-sprite */
+    svg4everybody({});
+
     const toggler = document.querySelector(`.c-navbar__toggler`);
     const collapse = document.querySelector(`.c-navbar__collapse`);
     const modals = [].slice.call(document.querySelectorAll(`[data-toggle="modal"]`));
@@ -53,9 +112,9 @@ document.addEventListener('DOMContentLoaded', function(){ // Аналог $(docu
     const animationTime = 300;
     const framesCount = 20;
     const more = document.querySelector(`.c-works__btn`);
-    const icons = document.querySelectorAll(`.c-testimonials__link`);
+    const icons = [].slice.call(document.querySelectorAll(`.c-testimonials__link`));
     const testmonials = document.querySelector(`.c-testimonials__list`);
-    const recalls = testmonials.querySelectorAll(`.c-testimonials__recall`);
+    const recalls = [].slice.call(testmonials.querySelectorAll(`.c-testimonials__recall`));
     const formContact = document.querySelector(`#contactForm`);
     const formSubscribe = document.querySelector(`#subscribeForm`);
 
@@ -128,6 +187,9 @@ document.addEventListener('DOMContentLoaded', function(){ // Аналог $(docu
 
     //** Testimonials */
     const toggleRecall = function(event) {
+        if (window.event) {
+            window.event.returnValue = false;
+        }
         event.preventDefault();
 
         recalls.forEach((el) => {
@@ -153,20 +215,23 @@ document.addEventListener('DOMContentLoaded', function(){ // Аналог $(docu
     const submitContactForm = function (event) {
         event.preventDefault();
 
-        let request = new XMLHttpRequest();
+        let request = ('ActiveXObject' in window) ? new ActiveXObject('Msxml2.XMLHTTP') : new XMLHttpRequest();
+
         request.onreadystatechange = function() {
-            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                // success, show this.responseText here
-                console.log(`SUCCESS`, this);
+            if (request.readyState != 4) return;
+            if (request.status != 200 && request.status != 304) {
+                return;
             }
         }
+        if (request.readyState == 4) return;
 
         request.open(this.method, this.action, true);
         request.setRequestHeader(`Content-Type`, `application/x-www-form-urlencoded`);
 
         var data = new FormData(this);
-        for (var key of data.keys())
-        console.log(`[${key}]: ${data.get(key)}`);
+
+        //for (var key of data.keys())
+        //console.log(`[${key}]: ${data.get(key)}`);
 
         request.send(data);
         this.reset();

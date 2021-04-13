@@ -9,9 +9,13 @@
   "author": "Романова Виктория",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
     "autoprefixer": "^9.7.6",
     "browser-sync": "^2.18.12",
     "del": "^3.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-cheerio": "^0.6.3",
     "gulp-concat": "^2.6.1",
     "gulp-csscomb": "^3.0.8",

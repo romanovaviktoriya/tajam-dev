@@ -172,16 +172,24 @@
 .c-logo {
     padding: 0;
     display: grid;
-    grid-column-gap: 10px;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto;
-    align-items: center;
+    grid-template-areas: 'c-logo__img c-logo__text';
+    grid-gap: 10px;
+    grid-template-columns: min-content max-content;
+    grid-template-rows: 1fr;
 
     &__img {
-
+        grid-area: c-logo__img;
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        align-self: center;
     }
 
     &__text {
+        display: block;
+        grid-area: c-logo__text;
+        -ms-grid-column: 3;
+        -ms-grid-row: 1;
+        align-self: center;
         font-family: $main-font, Arial, sans-serif;
         font-size: 30px;
         font-weight: 100;
@@ -232,5 +240,15 @@
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 0.8rem;
         padding-left: 0.8rem;
+    }
+}
+
+//** IE **/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .c-logo {
+
+        &__text {
+            background: none;
+        }
     }
 }

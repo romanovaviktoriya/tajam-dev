@@ -35,6 +35,9 @@ module.exports = function() {
     $.gulp.task('js:copy', () => {
         return $.gulp.src(['./dev/static/js/*.js',
                            '!./dev/static/js/libs.min.js'])
+            .pipe($.babel({
+                presets: ['@babel/preset-env']
+              }))
             .pipe($.gulp.dest('./build/static/js/'))
             .pipe($.browserSync.reload({
                 stream: true
